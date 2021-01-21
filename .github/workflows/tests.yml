@@ -10,7 +10,7 @@ env:
   HOMEBREW_CHANGE_ARCH_TO_ARM: 1
 jobs:
   tap_syntax:
-    if: github.repository == 'Homebrew/homebrew-core'
+    #if: github.repository == 'Homebrew/homebrew-core'
     runs-on: ubuntu-latest
     outputs:
       run-tests: ${{ steps.check-labels.outputs.result }}
@@ -47,7 +47,7 @@ jobs:
     - name: Check for CI-syntax-only label
       id: check-labels
       uses: actions/github-script@v3
-      if: github.event_name == 'pull_request'
+     # if: github.event_name == 'pull_request'
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
@@ -65,7 +65,7 @@ jobs:
     - name: Check for CI-force-arm label
       id: check-arm-labels
       uses: actions/github-script@v3
-      if: github.event_name == 'pull_request'
+      #if: github.event_name == 'pull_request'
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
