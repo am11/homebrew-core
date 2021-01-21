@@ -34,7 +34,7 @@ class Deno < Formula
     ENV["V8_FROM_SOURCE"] = "1"
     # overwrite Chromium minimum sdk version of 10.15
     ENV["FORCE_MAC_SDK_MIN"] = "10.13"
-    ENV["MACOSX_DEPLOYMENT_TARGET"] = "10.13"
+    # ENV["MACOSX_DEPLOYMENT_TARGET"] = "10.13"
     # build with llvm and link against system libc++ (no runtime dep)
     ENV["CLANG_BASE_PATH"] = Formula["llvm"].prefix
     ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
